@@ -1,4 +1,4 @@
-package com.example.bootstrap;
+package com.example.bootstrap.entity;
 
 
 import org.springframework.context.annotation.Bean;
