@@ -34,7 +34,9 @@ public class APIQueryController {
     }
 
     @GetMapping("/searchById")
-    public ResponseEntity<String> getBreedById(@RequestParam(required = true) long id) {
+    public ResponseEntity<String> getBreedById(@RequestParam Long id) throws Exception {
+        if(id == null)
+            throw new Exception("ID is missing");
         String breed = dogService.retrieveDogBreedById(id);
         return new ResponseEntity<String>(breed, HttpStatus.OK);
     }
