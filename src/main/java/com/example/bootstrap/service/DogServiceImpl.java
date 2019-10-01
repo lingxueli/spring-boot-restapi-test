@@ -19,22 +19,17 @@ public class DogServiceImpl implements DogService {
 
     @Override
     public List<String> retrieveDogBreed() {
-         List<String> breeds = new ArrayList<String>();
-         dogRepository.findAll().forEach(dog -> breeds.add(dog.getBreed()));
-         return breeds;
+        return (List<String>) dogRepository.findAllBreed();
     }
 
     @Override
     public String retrieveDogBreedById(long id) {
-        Optional<Dog> toUnpack = dogRepository.findById(id);
-        return toUnpack.isPresent() ? toUnpack.get().getBreed() : null;
+        return (String) dogRepository.findBreedById(id);
     }
 
     @Override
     public List<String> retrieveDogNames() {
-        List<String> names = new ArrayList<String>();
-        dogRepository.findAll().forEach(dog -> names.add(dog.getName()));
-        return names;
+        return (List<String>) dogRepository.findAllName();
     }
 
 }
