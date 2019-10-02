@@ -2,6 +2,7 @@ package com.example.bootstrap.web;
 
 import com.example.bootstrap.entity.Dog;
 import com.example.bootstrap.service.DogService;
+import com.example.bootstrap.service.DogServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
