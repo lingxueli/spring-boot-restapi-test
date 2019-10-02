@@ -3,9 +3,12 @@ package com.example.bootstrap.service;
 import com.example.bootstrap.entity.Dog;
 import com.example.bootstrap.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 import java.util.List;
 
+@Service
 public class DogServiceImpl implements DogService {
     @Autowired
     DogRepository dogRepository;
