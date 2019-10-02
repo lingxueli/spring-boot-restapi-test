@@ -3,10 +3,8 @@ package com.example.bootstrap.service;
 import com.example.bootstrap.entity.Dog;
 import com.example.bootstrap.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
+import java.util.List;
 
 public class DogServiceImpl implements DogService {
     @Autowired
@@ -24,7 +22,9 @@ public class DogServiceImpl implements DogService {
 
     @Override
     public String retrieveDogBreedById(long id) {
-        return (String) dogRepository.findBreedById(id);
+        Optional<String> optionalBreed = Optional.ofNullable(dogRepository.findBreedById(id));
+        String breed = optionalBreed.orElseThrow(DogNotFoundException::new);
+        return breed;
     }
 
     @Override
