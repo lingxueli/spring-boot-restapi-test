@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Bean;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "test")
+@Table(name = "dog")
 public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String Name;
+    private String name;
     private String breed;
     private String origin;
 
@@ -26,7 +26,7 @@ public class Dog {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getBreed() {
@@ -38,7 +38,7 @@ public class Dog {
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
     public void setBreed(String breed) {
