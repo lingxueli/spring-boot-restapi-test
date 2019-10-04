@@ -22,7 +22,7 @@ public class APIQueryController {
         this.dogService = dogService;
     }
 
-    @GetMapping("/dog")
+    @GetMapping("/dogs")
     public ResponseEntity<List<Dog>> getAllDogs() {
         List<Dog> list = dogService.retrieveDogs();
         return new ResponseEntity<List<Dog>>(list, HttpStatus.OK);
